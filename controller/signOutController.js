@@ -2,7 +2,7 @@ module.exports = {
     logOutUser: (req, res)=>{
         if(req.session.user){
             // Cookie begone
-            res.clearCookie("username", {domain: "https://james-t-ardian.github.io", path:"/"})
+            res.clearCookie("username", {domain: "blogged-server.herokuapp.com", path:"/"})
         
             res.status(200).json({loggedOut: true, msg: "User has been logged out"})
         } else {
