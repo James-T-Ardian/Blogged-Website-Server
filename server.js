@@ -14,7 +14,7 @@ const blogPostsRoute = require('./routes/blogPostsRoute')
 // Middlewares used
 app.use(express.json())
 app.use(cors({
-    origin: "http://localhost:3006",
+    origin: "https://flamboyant-austin-5d39ec.netlify.app",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }))
