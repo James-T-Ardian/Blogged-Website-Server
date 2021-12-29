@@ -28,9 +28,7 @@ app.use(expressSession({
     proxy : true,
     cookie: {
         // 1 Hour
-        expires: 3600000,
-        httpOnly: true,
-        path: "/",
+        maxAge: 3600000,
         secure: true,
     }
 }))
