@@ -29,7 +29,7 @@ app.use(expressSession({
         // 1 Hour
         maxAge: 3600000,
         secure: true,
-        domain: "james-t-ardian.github.io"
+        sameSite:'none'
     }
 }))
 
