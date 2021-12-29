@@ -20,6 +20,7 @@ app.use(cors({
 }))
 app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
+app.enable("trust proxy")
 app.use(expressSession({
     key: "username",
     secret: "doesnt actually matter",
@@ -27,7 +28,10 @@ app.use(expressSession({
     saveUninitialized: false,
     cookie: {
         // 1 Hour
-        expires: 3600000
+        maxAge: 3600000,
+        proxy:true,
+        secure: true,
+        sameSite: "none"
     }
 }))
 
