@@ -14,24 +14,20 @@ const blogPostsRoute = require('./routes/blogPostsRoute')
 // Middlewares used
 app.use(express.json())
 app.use(cors({
-    origin: "https://james-t-ardian.github.io",
+    origin: "http://localhost:3006",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }))
 app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
-app.enable('trust proxy');
 app.use(expressSession({
     key: "username",
     secret: "doesnt actually matter",
-    proxy : true,
-    resave: true,
+    resave: false,
     saveUninitialized: false,
     cookie: {
         // 1 Hour
-        maxAge: 3600000,
-        secure: true,
-        sameSite:'none',
+        expires: 3600000
     }
 }))
 
