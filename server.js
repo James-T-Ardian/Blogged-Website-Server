@@ -25,6 +25,7 @@ app.use(expressSession({
     secret: "doesnt actually matter",
     resave: false,
     saveUninitialized: true,
+    proxy : true,
     cookie: {
         // 1 Hour
         expires: 3600000,
