@@ -25,6 +25,8 @@ app.use(expressSession({
     key: "username",
     secret: "doesnt actually matter",
     proxy : true,
+    resave: true,
+    saveUninitialized: false,
     cookie: {
         // 1 Hour
         maxAge: 3600000,
