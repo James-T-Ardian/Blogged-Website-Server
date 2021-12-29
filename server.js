@@ -24,13 +24,12 @@ app.enable('trust proxy');
 app.use(expressSession({
     key: "username",
     secret: "doesnt actually matter",
-    resave: false,
-    saveUninitialized: true,
     proxy : true,
     cookie: {
         // 1 Hour
         maxAge: 3600000,
         secure: true,
+        domain: "james-t-ardian.github.io"
     }
 }))
 
