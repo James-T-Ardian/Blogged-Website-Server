@@ -1,5 +1,3 @@
-require('dotenv').config()
-
 // Middleware initialization
 const cors = require('cors')
 const cookieParser = require('cookie-parser')
@@ -16,7 +14,7 @@ const blogPostsRoute = require('./routes/blogPostsRoute')
 // Middlewares used
 app.use(express.json())
 app.use(cors({
-    origin: "http://localhost:3006",
+    origin: "https://james-t-ardian.github.io",
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true
 }))
