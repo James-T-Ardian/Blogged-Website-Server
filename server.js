@@ -24,10 +24,13 @@ app.use(expressSession({
     key: "username",
     secret: "doesnt actually matter",
     resave: false,
-    saveUninitialized: false,
+    saveUninitialized: true,
     cookie: {
         // 1 Hour
-        expires: 3600000
+        expires: 3600000,
+        httpOnly: true,
+        path: "/",
+        secure: true,
     }
 }))
 
