@@ -20,6 +20,7 @@ app.use(cors({
 }))
 app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
+app.enable('trust proxy');
 app.use(expressSession({
     key: "username",
     secret: "doesnt actually matter",
