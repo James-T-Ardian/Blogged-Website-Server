@@ -1,6 +1,3 @@
-import dotenv from 'dotenv'
-dotenv.config()
-
 // Middleware initialization
 import express, {Application, Request, Response} from 'express'
 import cors from 'cors'
@@ -27,7 +24,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
 
 app.use(expressSession({
-    secret: "doesnt matter",
+    secret: process.env.SESSION_SECRET as string,
     resave: false,
     saveUninitialized: false,
     cookie: {
