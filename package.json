@@ -2,7 +2,7 @@
   "name": "server",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "src/server.js",
   "engines": { "node": "14.18.0" },
   "scripts": {
     "start": "node src/server.js",
