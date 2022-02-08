@@ -7,7 +7,7 @@ const logOutUser:RequestHandler = (req:Request, res:Response): Response<any, Rec
     if(req.session.user){
         // Destroy cookie
         req.session.destroy((err:any)=>{
-            return res.status(500).json({loggedOut: false, msg: "Server error"})
+            // Do nothing
         });
         res.clearCookie("username")
     

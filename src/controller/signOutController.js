@@ -7,7 +7,7 @@ const logOutUser = (req, res) => {
     if (req.session.user) {
         // Destroy cookie
         req.session.destroy((err) => {
-            return res.status(500).json({ loggedOut: false, msg: "Server error" });
+            // Do nothing
         });
         res.clearCookie("username");
         return res.status(200).json({ loggedOut: true, msg: "User has been logged out" });
