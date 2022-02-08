@@ -23,13 +23,16 @@ app.use((0, cors_1.default)({
 }));
 app.use((0, cookie_parser_1.default)());
 app.use(express_1.default.urlencoded({ extended: true }));
+app.enable("trust proxy");
 app.use((0, express_session_1.default)({
     secret: process.env.SESSION_SECRET,
     resave: false,
     saveUninitialized: false,
     cookie: {
         // 1 Hour
-        maxAge: 3600000
+        maxAge: 3600000,
+        secure: true,
+        sameSite: "none"
     }
 }));
 // Routes used

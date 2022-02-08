@@ -22,14 +22,16 @@ app.use(cors({
 }))
 app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
-
+app.enable("trust proxy")
 app.use(expressSession({
     secret: process.env.SESSION_SECRET as string,
     resave: false,
     saveUninitialized: false,
     cookie: {
         // 1 Hour
-        maxAge: 3600000
+        maxAge: 3600000,
+        secure: true,
+        sameSite: "none"
     }
 }))
 
