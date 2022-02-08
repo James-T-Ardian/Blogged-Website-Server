@@ -27,7 +27,7 @@ app.use(cookieParser())
 app.use(express.urlencoded({extended: true}))
 
 app.use(expressSession({
-    secret: process.env.SESSION_SECRET as string,
+    secret: "doesnt matter",
     resave: false,
     saveUninitialized: false,
     cookie: {
