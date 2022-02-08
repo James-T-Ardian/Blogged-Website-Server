@@ -26,9 +26,9 @@ class Posts {
         // Param: postID -> postID of the post you want to search
         //
         // Returns promise of mysql query result from search of post by id made by user with username = this.username
-        this.getUserPostByPostID = (postID) => __awaiter(this, void 0, void 0, function* () {
+        this.getUserPostByPostID = (post_id) => __awaiter(this, void 0, void 0, function* () {
             const sql = 'SELECT title, body, created_at FROM posts WHERE post_id = ? && uploader = ?';
-            const [result, _] = yield mysql.execute(sql, [postID, this.username]);
+            const [result, _] = yield mysql.execute(sql, [post_id, this.username]);
             return result;
         });
         // Param: title -> title of new post
@@ -46,17 +46,17 @@ class Posts {
         // Param: body -> new text body
         //
         // Returns promise of mysql query result from updating post for user with username = this.username
-        this.updateUserPost = (postID, title, body) => __awaiter(this, void 0, void 0, function* () {
+        this.updateUserPost = (post_id, title, body) => __awaiter(this, void 0, void 0, function* () {
             const sql = 'UPDATE posts SET title = ?, body = ? WHERE post_id  = ?';
-            const [result, _] = yield mysql.execute(sql, [title, body, postID]);
+            const [result, _] = yield mysql.execute(sql, [title, body, post_id]);
             return result;
         });
         // Param: postID -> postID of the post you want to delete
         //
         // Returns promise of mysql query result from deleting post by id for user with username = this.username
-        this.deleteUserPost = (postID) => __awaiter(this, void 0, void 0, function* () {
+        this.deleteUserPost = (post_id) => __awaiter(this, void 0, void 0, function* () {
             const sql = 'DELETE FROM posts WHERE post_id  = ?';
-            const [result, _] = yield mysql.execute(sql, [postID]);
+            const [result, _] = yield mysql.execute(sql, [post_id]);
             return result;
         });
         // Returns promise of mysql query result from deleting all posts for user with username = this.username
